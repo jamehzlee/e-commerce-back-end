@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
       include: [{model: Product}]
     });
     res.status(200).json(tagData);
-  } catch (error) {
+  } catch (err) {
     res.status(500).json(err);
   }
 });
@@ -24,7 +24,7 @@ router.get('/:id', async (req, res) => {
       include: [{model: Product}]
     });
     res.status(200).json(tagData);
-  } catch (error) {
+  } catch (err) {
     res.status(500).json(err);
   }
 });
@@ -34,7 +34,7 @@ router.post('/', async (req, res) => {
   try {
     const tagData = await Category.create(req.body);
     res.status(200).json(tagData);
-  } catch (error) {
+  } catch (err) {
     res.status(500).json(err);
   }
 });
@@ -48,7 +48,7 @@ router.put('/:id', async (req, res) => {
       }
     });
     res.status(200).json(tagData);
-  } catch (error) {
+  } catch (err) {
     res.status(500).json(err);
   }
 });
@@ -68,7 +68,7 @@ router.delete('/:id', async (req, res) => {
     }
     res.status(200).json(tagData);
 
-  } catch (error) {
+  } catch (err) {
     res.status(500).json(err);
   }
 });
